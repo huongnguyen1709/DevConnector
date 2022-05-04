@@ -6,6 +6,9 @@ const app = express()
 // Connect Database
 connectDB()
 
+// Init Middleware (to parse the request body, allow to get data in request body)
+app.use(express.json({ extended: false }))
+
 app.get('/', (req, res) => res.send('API Running'))
 
 // Define Routes
